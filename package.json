@@ -1,0 +1,43 @@
+{
+    "name": "eslint-issue-base",
+    "version": "1.0.0",
+    "private": true,
+    "author": "Scandiweb info@scandiweb.com",
+    "license": "OSL-3.0",
+    "scripts": {
+        "eslint": "eslint ./src --ignore-pattern *.test.*",
+        "eslint:all:cache": "eslint --cache --resolve-plugins-relative-to . --ignore-pattern *.test.* ./src",
+        "eslint:1": "eslint --cache --resolve-plugins-relative-to . --ignore-pattern *.test.* ./src/Test.handler.js",
+        "eslint:v": "eslint -v",
+        "stylelint": "stylelint ./src/**/*.scss",
+        "stylelint:fix": "npm run stylelint -- --fix",
+        "stylelint:cache": "stylelint --cache ./src/**/*.scss"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "npm run eslint:cache && npm run stylelint:cache"
+        }
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "@scandipwa/eslint-plugin-scandipwa-guidelines": "^1.10",
+        "babel-eslint": "^10.0.1",
+        "eslint": "^7.8.1",
+        "eslint-config-airbnb": "^18.2.0",
+        "eslint-config-airbnb-base": "^14.2.0",
+        "eslint-loader": "^4.0.2",
+        "eslint-plugin-array-func": "^3.1.7",
+        "eslint-plugin-babel": "^5.3.1",
+        "eslint-plugin-fp": "^2.3.0",
+        "eslint-plugin-import": "^2.22.1",
+        "eslint-plugin-jest": "^24.0.2",
+        "eslint-plugin-jsx-a11y": "^6.1.2",
+        "eslint-plugin-react": "^7.19.0",
+        "eslint-plugin-simple-import-sort": "^5.0.3",
+        "husky": "^4.3.0",
+        "stylelint": "^13.7.0",
+        "stylelint-config-standard": "^20.0.0",
+        "stylelint-order": "^4.1.0",
+        "stylelint-scss": "^3.18.0"
+    }
+}
